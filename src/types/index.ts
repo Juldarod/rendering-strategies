@@ -8,32 +8,24 @@ export type TPokemonItem = {
   sprite?: string;
 };
 
-export type TAbilitiesItem = {
-  ability: { name: string; url: string };
-};
-
-export type TStatsItem = {
-  base_stat: number;
-  stat: {
-    name: string;
-  };
-};
-
-export type TTypesItem = {
-  type: { name: string };
-};
-
 export type TAllPokemonResponse = {
   results: Array<TPokemonItem>;
 };
 
 export type TPokemonResponse = {
   name: string;
-  abilities: Array<TAbilitiesItem>;
-  types: Array<TTypesItem>;
+  abilities: Array<{ ability: { name: string; url: string } }>;
+  types: Array<{
+    type: { name: string };
+  }>;
   height: number;
   weight: number;
-  stats: Array<TStatsItem>;
+  stats: Array<{
+    base_stat: number;
+    stat: {
+      name: string;
+    };
+  }>;
   sprites: {
     other: { ["official-artwork"]: { front_default: string } };
   };

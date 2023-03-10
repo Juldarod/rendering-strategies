@@ -2,7 +2,8 @@ import { TPokemonItem } from "@/types";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import styles from "@/styles/pokemon-item.module.scss";
+import styles from "@/styles/PokemonItem.module.scss";
+import Image from "next/image";
 
 function PokemonItem(props: TPokemonItem) {
   const { name, sprite, url } = props;
@@ -12,10 +13,12 @@ function PokemonItem(props: TPokemonItem) {
 
   return (
     <li className={styles.item}>
-      <Link href={`${router.pathname}/${id}`} prefetch={false}>
-        <h2 className={styles.header}>{name}</h2>
-        <img className={styles.image} src={sprite} alt={name} />
-      </Link>
+      <h2 className={styles.header}>{name}</h2>
+      <div className={styles.image}>
+        <Link href={`${router.pathname}/${id}`} prefetch={false}>
+          <Image src={sprite!} alt={name} width={96} height={96} />
+        </Link>
+      </div>
     </li>
   );
 }

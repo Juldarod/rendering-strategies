@@ -1,0 +1,18 @@
+.header {
+  text-transform: capitalize;
+  text-shadow: -1px 0 var(--light-gray), 0 1px var(--light-gray), 1px 0 var(--light-gray), 0 -1px var(--light-gray);
+  letter-spacing: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.image {
+  max-width: 96px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,16 +1,34 @@
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --base-blue: #5998f9;
+  --dark-blue: #29589d;
+  --base-gray: #8697a7;
+  --dark-gray: #5e7887;
+  --light-gray: #c7d0d9;
+  --sky-gray: #c8d1da;
+  --night-gray: #788997;
+  --background: #dfe8e7;
+  --light-text: #edf7fe;
+  --dark-text: #505253;
 }
 
-@media (prefers-color-scheme: dark) {
+/* #5998f9 Base blue */
+/* #29589d Dark blue */
+/* #8697a7 Base gray */
+/* #5e7887 Dark gray */
+/* #c7d0d9 Light gray */
+/* #c8d1da Sky gray */
+/* #788997 Night gray */
+/* #dfe8e7 Background */
+/* #edf7fe Light text */
+/* #505253 Dark text */
+
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -26,13 +44,12 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--dark-text);
+  background: var(--background);
+}
+
+li {
+  list-style: none;
 }
 
 a {

@@ -1,9 +1,8 @@
 import PokemonItem from "@/components/PokemonItem";
 import { TAllPokemonData } from "@/types";
 import { Fragment } from "react";
-// import Image from "next/image";
 
-import styles from "@/styles/pokemon-grid.module.scss";
+import styles from "@/styles/PokemonGrid.module.scss";
 
 function PokemonGrid({ allPokemon }: { allPokemon: TAllPokemonData }) {
   return (
