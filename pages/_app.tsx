@@ -1,10 +1,7 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-
-// pages/_app.js
 import localFont from "next/font/local";
 
-// Font files can be colocated inside of `pages`
 const pokeFont = localFont({
   src: [
     { path: "../fonts/legacy.ttf", weight: "100" },

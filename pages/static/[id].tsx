@@ -46,6 +46,7 @@ function StaticPokemon({
       weight={weight}
       stats={stats}
       sprite={sprite}
+      renderType="static"
     />
   );
 }

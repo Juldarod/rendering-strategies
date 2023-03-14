@@ -57,6 +57,6 @@ export async function getAbility(id: string): Promise<TAbilityData> {
   return {
     name: data.names.find((item) => findEnglishOption(item))!.name,
     description: data.effect_entries.find((item) => findEnglishOption(item))!
-      .effect,
+      .short_effect,
   };
 }

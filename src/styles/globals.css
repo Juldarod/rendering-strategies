@@ -5,42 +5,40 @@
   --dark-gray: #5e7887;
   --light-gray: #c7d0d9;
   --sky-gray: #c8d1da;
-  --night-gray: #788997;
+  --night-gray: #788798;
   --background: #dfe8e7;
   --light-text: #edf7fe;
   --dark-text: #505253;
+
+  --normal-type: #a8a878;
+  --fire-type: #f08030;
+  --water-type: #6890f0;
+  --grass-type: #78c850;
+  --electric-type: #f8d030;
+  --ice-type: #98d8d8;
+  --fighting-type: #c03028;
+  --poison-type: #a040a0;
+  --ground-type: #e0c068;
+  --flying-type: #a890f0;
+  --psychic-type: #f85888;
+  --bug-type: #a8b820;
+  --rock-type: #b8a038;
+  --ghost-type: #705898;
+  --dark-type: #705848;
+  --dragon-type: #7038f8;
+  --steel-type: #b8b8d0;
+  --fairy-type: #f0b6bc;
 }
-
-/* #5998f9 Base blue */
-/* #29589d Dark blue */
-/* #8697a7 Base gray */
-/* #5e7887 Dark gray */
-/* #c7d0d9 Light gray */
-/* #c8d1da Sky gray */
-/* #788997 Night gray */
-/* #dfe8e7 Background */
-/* #edf7fe Light text */
-/* #505253 Dark text */
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-} */
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-size: 16px;
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  font-size: 16px;
 }
 
 body {
@@ -55,10 +53,4 @@ li {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }

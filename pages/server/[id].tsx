@@ -37,6 +37,7 @@ function ServerSidePokemon({
       weight={weight}
       stats={stats}
       sprite={sprite}
+      renderType="server"
     />
   );
 }

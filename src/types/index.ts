@@ -33,7 +33,7 @@ export type TPokemonResponse = {
 
 export type TAbilityResponse = {
   names: Array<TAbilityLanguage & { name: string }>;
-  effect_entries: Array<TAbilityLanguage & { effect: string }>;
+  effect_entries: Array<TAbilityLanguage & { short_effect: string }>;
 };
 
 export type TAllPokemonData = Array<TPokemonItem>;
@@ -49,6 +49,7 @@ export type TPokemonData = {
     value: number;
   }>;
   sprite: string;
+  renderType?: string;
 };
 
 export type TAbilityData = {

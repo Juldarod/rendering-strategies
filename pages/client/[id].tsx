@@ -1,7 +1,7 @@
 import PokemonProfile from "@/components/PokemonProfile";
 import { getAllPokemon, getPokemon } from "@/services/pokeapi";
 import { TPokemonItem } from "@/types";
-import { options } from "@/utils/constants";
+import { loadingStyles, options } from "@/utils/constants";
 import { getIdFromUrl } from "@/utils/util";
 import { ParsedUrlQuery } from "querystring";
 import useSWR from "swr";
@@ -31,7 +31,7 @@ export async function getStaticProps({ params }: { params: ParsedUrlQuery }) {
 function ClientPokemon({ id }: { id: string }) {
   const { data: pokemon } = useSWR(id, getPokemon, options);
 
-  if (!pokemon) return <div>Loading...</div>;
+  if (!pokemon) return <div style={loadingStyles}>Loading...</div>;
 
   const { name, abilities, stats, types, sprite, height, weight } = pokemon;
 
@@ -44,6 +44,7 @@ function ClientPokemon({ id }: { id: string }) {
       weight={weight}
       stats={stats}
       sprite={sprite}
+      renderType="client"
     />
   );
 }
