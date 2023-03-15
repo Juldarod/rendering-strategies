@@ -1,6 +1,6 @@
 import styles from "@/styles/PokemonProfile.module.scss";
 import { TPokemonData } from "@/types";
-import { capitalize } from "@/utils/util";
+import { capitalize, formatBiometrics } from "@/utils/util";
 import Head from "next/head";
 import Image from "next/image";
 import { Fragment, useId } from "react";
@@ -21,8 +21,8 @@ function PokemonProfile({
   const abilityId = useId();
   const statId = useId();
 
-  const formattedHeight = `Height: ${Number(height) / 10}m`;
-  const formattedWeight = `Weight: ${weight}Kg`;
+  const formattedHeight = `Height: ${formatBiometrics(height)}m`;
+  const formattedWeight = `Weight: ${formatBiometrics(weight)}Kg`;
 
   return (
     <>
