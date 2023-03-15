@@ -8,7 +8,6 @@ const pokeFont = localFont({
     { path: "../fonts/modern.ttf", weight: "200" },
     { path: "../fonts/solid.ttf", weight: "500" },
     { path: "../fonts/hollow.ttf", weight: "600" },
-    { path: "../fonts/Roboto-Regular.ttf", weight: "400" },
   ],
 });
 

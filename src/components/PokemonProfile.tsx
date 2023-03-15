@@ -3,7 +3,7 @@ import { TPokemonData } from "@/types";
 import { capitalize } from "@/utils/util";
 import Head from "next/head";
 import Image from "next/image";
-import { useId } from "react";
+import { Fragment, useId } from "react";
 import Header from "./Header";
 import TypeLabel from "./TypeLabel";
 
@@ -63,12 +63,9 @@ function PokemonProfile({
                 </ul>
                 <ul className={styles.abilities}>
                   {abilities.map((ability) => (
-                    <>
+                    <Fragment key={`${ability.name}-${abilityId}`}>
                       {ability.description ? (
-                        <li
-                          key={`${ability.name}-${abilityId}`}
-                          className={styles.ability}
-                        >
+                        <li className={styles.ability}>
                           <span className={styles.abilityName}>
                             <span>Ability</span>
                             <span>{ability.name}</span>
@@ -78,7 +75,7 @@ function PokemonProfile({
                           </span>
                         </li>
                       ) : null}
-                    </>
+                    </Fragment>
                   ))}
                 </ul>
               </div>

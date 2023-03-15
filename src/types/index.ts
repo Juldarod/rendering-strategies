@@ -54,5 +54,5 @@ export type TPokemonData = {
 
 export type TAbilityData = {
   name: string;
-  description?: string;
+  description: string | null;
 };
