@@ -1,8 +1,10 @@
+import useFollowing from "@/hooks/useFollowing";
 import styles from "@/styles/PokemonProfile.module.scss";
 import { TPokemonData } from "@/types";
 import { capitalize, formatBiometrics } from "@/utils/util";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { Fragment, useId } from "react";
 import Header from "./Header";
 import TypeLabel from "./TypeLabel";
@@ -20,6 +22,7 @@ function PokemonProfile({
   const typeId = useId();
   const abilityId = useId();
   const statId = useId();
+  const { getNextPokemonRoute, getPreviousPokemonRoute } = useFollowing();
 
   const formattedHeight = `Height: ${formatBiometrics(height)}m`;
   const formattedWeight = `Weight: ${formatBiometrics(weight)}Kg`;
@@ -39,11 +42,19 @@ function PokemonProfile({
             <div className={styles.profile}>
               <h1 className={styles.name}>{name}</h1>
               <Image src={sprite} alt={name} width={300} height={300} />
-              <ul className={styles.types}>
-                {types.map((type) => (
-                  <TypeLabel key={`${type}-${typeId}`} type={type} />
-                ))}
-              </ul>
+              <div className={styles.navigation}>
+                <Link href={getPreviousPokemonRoute()}>
+                  <pre className={styles.arrow}>&larr;</pre>
+                </Link>
+                <ul className={styles.types}>
+                  {types.map((type) => (
+                    <TypeLabel key={`${type}-${typeId}`} type={type} />
+                  ))}
+                </ul>
+                <Link href={getNextPokemonRoute()}>
+                  <pre className={styles.arrow}>&rarr;</pre>
+                </Link>
+              </div>
               <ul className={styles.biometrics}>
                 <li className={styles.size}>{formattedHeight}</li>
                 <li className={styles.size}>{formattedWeight}</li>

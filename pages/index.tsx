@@ -13,18 +13,18 @@ export default function Home() {
       </Head>
       <ul className={styles.list}>
         <li className={styles.item}>
-          <Link href="/client" prefetch={false}>
-            CSR
+          <Link href="/client">
+            <abbr title="Client Side Rendering">CSR</abbr>
           </Link>
         </li>
         <li className={styles.item}>
-          <Link href="/server" prefetch={false}>
-            SSR
+          <Link href="/server">
+            <abbr title="Server Side Rendering">SSR</abbr>
           </Link>
         </li>
         <li className={styles.item}>
-          <Link href="/static" prefetch={false}>
-            SSG
+          <Link href="/static">
+            <abbr title="Static Site Generation">SSG</abbr>
           </Link>
         </li>
       </ul>
